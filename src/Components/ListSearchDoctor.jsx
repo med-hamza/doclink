@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import AdressMpas from './GoogleMaps/AdressMpas'
-import picDoctor from '../assets/picture/doctor.png'
+import picDoctor from '../assets/picture/doctor.png';
 const ListSearchDoctor = ({ searchdata }) => {
     return (
         <div className='w-full container mx-auto px-4 py-4 sm:px-6 lg:px-8 font-poppins'>
