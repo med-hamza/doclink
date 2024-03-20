@@ -7,7 +7,9 @@ const Menu = () => {
             <div className='container mx-auto px-4 py-4 sm:px-6 lg:px-8' >
                 <div className="flex justify-between items-center">
                     <div>
-                        <img src={logo} alt='logo doctor' />
+                        <Link to="/">
+                            <img src={logo} alt='logo doctor' />
+                        </Link>
                     </div>
                     <div className='flex  justify-center items-center gap-3'>
                         <Link to="/" className="text-primary font-poppins font-medium" > Find Doctors </Link>
