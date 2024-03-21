@@ -7,10 +7,10 @@ import healrecord from '../../assets/picture/health_records.png'
 const Banners = () => {
     return (
         <div className='container mx-auto px-4 py-28 sm:px-6 lg:px-8 bg-hero-image bg-cover mb-8'>
-            <h1 className=" text-primary text-7xl  font-poppins font-medium ">Consult Top <br />
-                <span className='text-primary text-7xl font-poppins font-bold '> Doctors Online </span>
+            <h1 className=" text-btncolor text-7xl  font-poppins font-medium ">Consult Top <br />
+                <span className='text-btncolor text-7xl font-poppins font-bold '> Doctors Online </span>
             </h1>
-            <h2 className=' mt-4 capitalize text-primary font-poppins text-5xl'>for any health concern</h2>
+            <h2 className=' mt-4 capitalize text-btncolor font-poppins text-5xl'>for any health concern</h2>
 
             <div className='flex justify-start items-center gap-3 mt-10'>
                 <div className="box">

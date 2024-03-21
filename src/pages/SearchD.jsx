@@ -11,8 +11,6 @@ const SearchD = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const category = searchParams.get('category')
     const name = searchParams.get('name')
-    // console.log("category", category)
-
 
 
     useEffect(() => {
@@ -20,7 +18,6 @@ const SearchD = () => {
             dispatch(searchDoctor({ category, name }));
         }
     }, [dispatch, category, name]);
-    console.log("data", searchdata)
 
     return (
         <div>

@@ -32,3 +32,12 @@ code {
 .secondarybtn {
   @apply bg-white px-3 py-2 text-xs text-btncolor border border-btncolor;
 }
+
+.searched_list::-webkit-scrollbar {
+  width: 2px;
+  padding: 20px;
+}
+
+.searched_list::-webkit-scrollbar-thumb {
+  background: #0F2F64;
+}

@@ -3,15 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchCategory } from '../redux/reducers/categorySlice';
 import { searchDoctor } from '../redux/reducers/searchSlice';
-import { fetchList } from '../redux/reducers/listSlice';
+
 import FilterDoctor from './FilterDoctor';
 
 
-const SearchDoctor = () => {
+const SearchDoctor = ({ listdata }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { listdata } = useSelector((state) => state.list)
     const { loading, error } = useSelector((state) => state.search)
     const { data } = useSelector((state) => state.category)
     const [name, setName] = useState('');
@@ -20,6 +19,7 @@ const SearchDoctor = () => {
     useEffect(() => {
         dispatch(fetchCategory())
     }, [dispatch])
+
     const handleSearch = () => {
         dispatch(searchDoctor({ selectedCategory, name }));
         let queryString = '';
@@ -57,7 +57,6 @@ const SearchDoctor = () => {
                 <p className='text-[#8B98B8] text-sm'>Search Doctor, clinics, hospital, etc.</p>
                 <FilterDoctor listdata={listdata} onNameClick={handleNameClick} />
             </div>
-
             <button className='searchbtn' onClick={handleSearch}> Search  </button>
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}

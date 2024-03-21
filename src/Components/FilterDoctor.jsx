@@ -15,26 +15,29 @@ const FilterDoctor = ({ listdata, onNameClick }) => {
     };
 
     return (
-        <div className='w-full'>
+        <div className=' w-4/5 relative'>
             <input
                 type='text'
                 value={searchItem}
                 onChange={handleInput}
-                className='placeholder-[#185FA0] w-full focus:outline-none focus:border-none'
+                className={`${isSearching ? 'border-btncolor focus:border focus:border-b-0 ' : ''} placeholder-btncolor px-2 w-full focus:outline-none `}
                 placeholder='MS - Obstetrics & Gynaecology, MBBS'
             />
             {isSearching && (
-                <ul>
-                    {listdata
-                        .filter((doctor) =>
-                            doctor.name.toLowerCase().includes(searchItem.toLowerCase())
-                        )
-                        .map((doctor) => (
-                            <li key={doctor.id} onClick={() => handleNameClick(doctor.name)}>
-                                {doctor.name}
-                            </li>
-                        ))}
-                </ul>
+                <div className='searched_list absolute bg-white w-full z-10  h-40 overflow-y-scroll py-3 border border-btncolor border-t-0 px-2'>
+                    <ul className=''>
+                        {listdata
+                            .filter((doctor) =>
+                                doctor.name.toLowerCase().includes(searchItem.toLowerCase())
+                            )
+                            .map((doctor) => (
+                                <li className=' cursor-pointer mb-1' key={doctor.id} onClick={() => handleNameClick(doctor.name)}>
+                                    <p className='font-medium text-sm'>  {doctor.name} </p>
+                                    <p className=' text-xs text-btncolor '> {doctor.title} </p>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
             )}
 
         </div>

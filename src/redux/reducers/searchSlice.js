@@ -11,7 +11,6 @@ export const searchDoctor = createAsyncThunk('search/fetchDoctors', async ({ cat
             url += `name=${name}`
         }
         const response = await axios.get(url);
-        console.log(response);
         return response.data;
     } catch (error) {
         throw new Error(error.response.data);

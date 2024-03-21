@@ -1,17 +1,8 @@
-import React, { useEffect } from 'react'
-import { fetchList } from '../redux/reducers/listSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import picDoctor from '../assets/picture/doctor.png'
 import AdressMpas from './GoogleMaps/AdressMpas'
-const ListDoctor = () => {
-    const { listdata, loading, error } = useSelector((state) => state.list)
-
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fetchList())
-    }, [dispatch])
+const ListDoctor = ({ listdata, loading, error }) => {
 
     if (loading) {
         return <p> Loading ....</p>

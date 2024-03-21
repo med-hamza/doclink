@@ -3,9 +3,9 @@ import Menu from '../Components/Menu'
 
 const Header = () => {
     return (
-        <div>
+        <>
             <Menu />
-        </div>
+        </>
     )
 }
 
