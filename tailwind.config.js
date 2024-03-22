@@ -13,10 +13,11 @@ module.exports = {
       },
       colors: {
         primary: '#0F2F64',
+        bluedoc: '#185FA0',
         bolder: '#303131',
         lighter: '#E3F0FF',
         seconder: '#F5FAFF',
-        btncolor: '#185FA0'
+
       }
     },
   },

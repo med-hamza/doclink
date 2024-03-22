@@ -40,7 +40,11 @@ const Doctordetails = () => {
         <div>
             <div className=' bg-lighter py-5 font-poppins '>
                 <div className=' max-w-4xl mx-auto'>
-                    <SearchDoctor listdata={listdata} />
+                    <SearchDoctor listdata={listdata} categorytitle='Select Doctor'
+                        namedoctor='Search Doctor, clinics, hospital, etc'
+                        style_section='px-2 py-3'
+                        stylebtn='searchbtn'
+                    />
                     <div className='grid grid-cols-7 gap-4'>
                         {category.map((category) => (
                             <CategoryDoctor key={category.id}

@@ -16,7 +16,7 @@ const ListDoctor = ({ listdata, loading, error }) => {
                 <div className=' w-4/5 mx-auto flex flex-wrap gap-3'>
                     <div className=' w-full lg:w-1/2'>
                         {listdata ? listdata.map((item) => (
-                            <div className='mb-4 px-3 py-4 bg-seconder border-2 border-[#E3F0FF]  rounded-md' key={item.id}>
+                            <div className='mb-4 px-3 py-4 bg-white  shadow-sm  rounded-md' key={item.id}>
                                 <div className="flex items-end">
                                     <Link to={`${item.id}`} className=' w-3/5 flex justify-start items-start'>
                                         <div>

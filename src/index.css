@@ -8,6 +8,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f4f4fc;
   @apply text-bolder
 }
 
@@ -21,16 +22,20 @@ code {
 }
 
 .primarybtn {
-  @apply bg-btncolor px-3 py-2 text-xs text-white;
+  @apply bg-bluedoc border px-3 py-2 text-xs text-white hover:bg-white hover:text-bluedoc hover:border hover:border-bluedoc;
 }
 
 .searchbtn {
-  @apply bg-btncolor px-6 py-3 text-xs text-white font-semibold rounded-md;
+  @apply bg-bluedoc px-6 border py-3 text-xs text-white font-semibold rounded-md;
 
 }
 
+.homebtn {
+  @apply bg-bluedoc px-8 border py-3 text-xs text-white font-semibold rounded-md hover:bg-white hover:text-bluedoc hover:border hover:border-bluedoc;
+}
+
 .secondarybtn {
-  @apply bg-white px-3 py-2 text-xs text-btncolor border border-btncolor;
+  @apply bg-white px-3 py-2 text-xs text-bluedoc border border-bluedoc hover:border hover:bg-bluedoc hover:text-white;
 }
 
 .searched_list::-webkit-scrollbar {

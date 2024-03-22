@@ -15,14 +15,14 @@ const boxData = [
         "link": '/ambulance'
     },
     {
-        "title": "Video Consult",
-        "picture": videoconsult,
-        "link": '/ambulance'
-    },
-    {
         "title": "Search Doctors",
         "picture": doctoricone,
         "link": '/list-doctor'
+    },
+    {
+        "title": "Video Consult",
+        "picture": videoconsult,
+        "link": '/ambulance'
     },
     {
         "title": "Search Hospitals ",
@@ -30,8 +30,8 @@ const boxData = [
         "link": '/ambulance'
     },
     {
-        "title": "Home Visits",
-        "picture": homeic,
+        "title": "Book Ambulance",
+        "picture": ambulance,
         "link": '/ambulance'
     },
     {
@@ -58,3 +58,5 @@ const boxData = [
 ]
 
 export default boxData;
+
+

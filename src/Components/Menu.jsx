@@ -13,15 +13,16 @@ const Menu = () => {
                     </div>
                     <div className='flex  justify-center items-center gap-3'>
                         <Link to="/" className="text-primary font-poppins font-medium" > Find Doctors </Link>
-                        <Link to="/" className="text-primary font-poppins font-medium"  > Medicines</Link>
-                        <Link to="/" className="text-primary font-poppins font-medium" > Lab Tests</Link>
+                        <Link to="/" className="text-primary font-poppins font-medium"  > contact us</Link>
+                        <Link to="/" className="text-primary font-poppins font-medium" > Help</Link>
+                        <Link to="/" className="text-primary font-poppins font-medium" > Blogs</Link>
+
                     </div>
                     <div>
-                        <div className='border b-1 border-[#0F2F64] rounded-md px-4 py-2'>
-                            <div className='flex justify-center items-center gap-2'>
+                        <div className=''>
+                            <div className='flex justify-center items-center gap-8'>
                                 <Link to="/" className="text-primary font-poppins font-medium"> Sign In </Link>
-                                <p>/</p>
-                                <Link to="/" className="text-primary font-poppins font-medium"> Sign Up </Link>
+                                <Link to="/" className=" px-8 py-1.5 bg-bluedoc text-white border-1 rounded-md "> Sign Up </Link>
                             </div>
                         </div>
                     </div>

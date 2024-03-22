@@ -4,7 +4,7 @@ const ComDetails = ({ picDoctor, itemData }) => {
     return (
         <div className=' w-4/5 mx-auto flex flex-wrap gap-3'>
             <div className=' w-full  lg:w-2/3'>
-                <div className='mb-4 px-1 py-1 bg-seconder border-2 border-[#E3F0FF]  rounded-md'>
+                <div className='mb-4 px-1 py-1 bg-lighter  shadow-sm  rounded-md'>
                     <div className='flex  gap-2'>
                         <div className='flex w-full'>
                             <img src={picDoctor} alt={itemData && itemData.name} />
