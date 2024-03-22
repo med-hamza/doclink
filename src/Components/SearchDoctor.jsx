@@ -38,7 +38,7 @@ const SearchDoctor = ({ listdata, style_section, categorytitle, namedoctor, titl
 
     return (
         <div className={`bg-white rounded-lg mb-5 ${style_section}  max-w-4xl mx-auto`} >
-            <h2 className=' text-black text-4xl font-semibold pb-2'>  {titlesearch} </h2>
+            <h2 className=' text-black text-4xl font-semibold pb-4'>  {titlesearch} </h2>
             <div className='flex items-center justify-between'>
                 <div className=''>
                     <p className='text-[#8B98B8] text-sm '> {categorytitle} </p>

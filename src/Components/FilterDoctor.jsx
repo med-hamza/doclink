@@ -26,7 +26,7 @@ const FilterDoctor = ({ listdata, onNameClick }) => {
                 type='text'
                 value={searchItem}
                 onChange={handleInput}
-                className={`${isSearching ? 'border-bluedoc focus:border focus:border-b-0 ' : ''} placeholder-bluedoc px-2 w-full focus:outline-none `}
+                className={`${isSearching ? ' border-bluedoc focus:border focus:border-b-0 ' : ''} placeholder-bluedoc px-2 w-full focus:outline-none `}
                 placeholder='MS - Obstetrics & Gynaecology, MBBS'
                 ref={inputRef}
             />

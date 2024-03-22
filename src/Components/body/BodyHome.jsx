@@ -9,7 +9,7 @@ const BodyHome = () => {
                     <div className=' w-4/5 mx-auto'>
                         <div className='flex items-start justify-start gap-5'>
                             <div className=' flex-1 w-32'>
-                                <p className=' text-primary text-5xl font-poppins font-light'> Quality Health Made
+                                <p className=' text-bluedoc text-5xl font-poppins font-light'> Quality Health Made
                                     with <span className=' font-semibold'> DocLink </span> Simple </p>
                                 <p className=' text-primary font-thin text-base'>It is the journey that takes you to new destinations
                                     every day with endless possibilities of life on the back

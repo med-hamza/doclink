@@ -46,3 +46,34 @@ code {
 .searched_list::-webkit-scrollbar-thumb {
   background: #0F2F64;
 }
+
+.body_search input {
+  border: 1px solid #185FA0;
+  padding: 10px;
+  border-radius: 18px;
+}
+
+.body_search select {
+  border: 1px solid #185FA0;
+  padding: 10px;
+  border-radius: 18px;
+}
+
+.body_search .searched_list {
+  border-bottom: 1px solid #185FA0 !important;
+  border-radius: 10Px !important;
+  border-top: none !important;
+}
+
+.bottom-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #185FA0;
+  transition: width .3s;
+}
+
+.bottom-link:hover::after {
+  width: 100%;
+}

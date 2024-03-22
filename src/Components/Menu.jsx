@@ -11,17 +11,17 @@ const Menu = () => {
                             <img src={logo} alt='logo doctor' />
                         </Link>
                     </div>
-                    <div className='flex  justify-center items-center gap-3'>
-                        <Link to="/" className="text-primary font-poppins font-medium" > Find Doctors </Link>
-                        <Link to="/" className="text-primary font-poppins font-medium"  > contact us</Link>
-                        <Link to="/" className="text-primary font-poppins font-medium" > Help</Link>
-                        <Link to="/" className="text-primary font-poppins font-medium" > Blogs</Link>
+                    <div className='flex  justify-center items-center gap-8'>
+                        <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium  hover:text-bluedoc" > Find Doctors </Link>
+                        <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium hover:text-bluedoc"  > contact us</Link>
+                        <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium hover:text-bluedoc" > Help</Link>
+                        <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium hover:text-bluedoc" > Blogs</Link>
 
                     </div>
                     <div>
                         <div className=''>
                             <div className='flex justify-center items-center gap-8'>
-                                <Link to="/" className="text-primary font-poppins font-medium"> Sign In </Link>
+                                <Link to="/" className="text-bluedoc font-poppins font-medium"> Sign In </Link>
                                 <Link to="/" className=" px-8 py-1.5 bg-bluedoc text-white border-1 rounded-md "> Sign Up </Link>
                             </div>
                         </div>
