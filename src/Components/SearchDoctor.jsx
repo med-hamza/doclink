@@ -7,7 +7,7 @@ import { searchDoctor } from '../redux/reducers/searchSlice';
 import FilterDoctor from './FilterDoctor';
 
 
-const SearchDoctor = ({ listdata, style_section, categorytitle, namedoctor, titlesearch, stylebtn }) => {
+const SearchDoctor = ({ listdata, style_section, categorytitle, namedoctor, titlesearch, stylebtn, availablename }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -15,13 +15,14 @@ const SearchDoctor = ({ listdata, style_section, categorytitle, namedoctor, titl
     const { data } = useSelector((state) => state.category)
     const [name, setName] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('')
+    const [showAvailableOnly, setShowAvailableOnly] = useState(false);
 
     useEffect(() => {
         dispatch(fetchCategory())
     }, [dispatch])
 
     const handleSearch = () => {
-        dispatch(searchDoctor({ selectedCategory, name }));
+        dispatch(searchDoctor({ selectedCategory, name, showAvailableOnly }));
         let queryString = '';
         if (selectedCategory) {
             queryString += `category=${encodeURIComponent(selectedCategory)}`
@@ -29,18 +30,24 @@ const SearchDoctor = ({ listdata, style_section, categorytitle, namedoctor, titl
         if (name) {
             queryString += `${queryString ? '&' : ''}name=${encodeURIComponent(name)}`
         }
+        if (showAvailableOnly) {
+            queryString += `available=true`;
+        }
         navigate(`/search?${queryString}`);
     };
     const handleNameClick = (selectedName) => {
         navigate(`/search?name=${encodeURIComponent(selectedName)}`);
     };
+    const toggleAvailableDoctors = () => {
+        setShowAvailableOnly(!showAvailableOnly);
+    };
 
 
     return (
-        <div className={`bg-white rounded-lg mb-5 ${style_section}  max-w-4xl mx-auto`} >
+        <div className={`bg-white rounded-lg mb-5 ${style_section}  max-w-6xl mx-auto`} >
             <h2 className=' text-black text-4xl font-semibold pb-4'>  {titlesearch} </h2>
-            <div className='flex items-center justify-between'>
-                <div className=''>
+            <div className='flex items-center justify-between gap-8'>
+                <div className=' w-1/5'>
                     <p className='text-[#8B98B8] text-sm '> {categorytitle} </p>
                     <select name="" id=""
                         className='focus:outline-none focus:border-none text-[#185FA0]'
@@ -55,9 +62,25 @@ const SearchDoctor = ({ listdata, style_section, categorytitle, namedoctor, titl
                         ))}
                     </select>
                 </div>
-                <div className=' w-2/3'>
+
+                <div className=' w-3/5'>
                     <p className='text-[#8B98B8] text-sm'> {namedoctor} </p>
                     <FilterDoctor listdata={listdata} onNameClick={handleNameClick} />
+                </div>
+                <div className=' w-1/5'>
+                    <p className='text-[#8B98B8] text-sm mb-1'> {availablename} </p>
+                    <label className="inline-flex items-center cursor-pointer">
+                        <input
+                            type="checkbox"
+                            id="availableToggle"
+                            checked={showAvailableOnly}
+                            onChange={toggleAvailableDoctors}
+                            className="sr-only peer"
+                        />
+                        <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:bluedoc rounded-full peer
+                         dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white 
+                         after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-bluedoc"></div>
+                    </label>
                 </div>
                 <button className={`${stylebtn}`} onClick={handleSearch}> Search  </button>
                 {loading && <p>Loading...</p>}

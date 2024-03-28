@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchListByid } from '../redux/reducers/listSlice'
@@ -8,12 +8,11 @@ import picDoctor from '../assets/picture/doctor_detail.png'
 import SearchDoctor from '../Components/SearchDoctor'
 import { fetchList } from '../redux/reducers/listSlice'
 import ComDetails from '../Components/Doctordetails/ComDetails'
-
+import { fetchAvailabiltyByid } from '../redux/reducers/AvailabilitySlice'
 
 const Doctordetails = () => {
     const { listdata } = useSelector((state) => state.list)
-    const [category, setCategory] = useState(DoctorsCategory)
-
+    const { availitemData } = useSelector((state) => state.available)
     const { itemData, loading, error } = useSelector((state) => state.list)
 
     const { id } = useParams();
@@ -21,13 +20,16 @@ const Doctordetails = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchList())
+
     }, [dispatch])
 
     useEffect(() => {
+        dispatch(fetchAvailabiltyByid(id))
+        dispatch(fetchList())
         dispatch(fetchListByid(id))
     }, [id, dispatch])
 
+    const category = useMemo(() => DoctorsCategory, []);
 
     if (loading) {
         return <p>loading ...</p>
@@ -42,6 +44,7 @@ const Doctordetails = () => {
                 <div className=' max-w-4xl mx-auto'>
                     <SearchDoctor listdata={listdata} categorytitle='Select Doctor'
                         namedoctor='Search Doctor, clinics, hospital, etc'
+                        availablename='Availability'
                         style_section='px-2 py-3'
                         stylebtn='searchbtn'
                     />
@@ -57,8 +60,9 @@ const Doctordetails = () => {
                 </div>
             </div>
             <div className='w-full container mx-auto px-4 py-4 sm:px-6 lg:px-8 font-poppins'>
-                <ComDetails itemData={itemData} picDoctor={picDoctor} />
+                <ComDetails itemData={itemData} picDoctor={picDoctor} availitemData={availitemData} />
             </div>
+
         </div>
     )
 }

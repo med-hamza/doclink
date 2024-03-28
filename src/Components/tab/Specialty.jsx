@@ -8,9 +8,6 @@ const Specialty = ({ itemData }) => {
         { name: "Emergency Dentistry" },
         { name: "Endodontics" },
         { name: "Laser Dentistry" },
-
-
-
     ]
     return (
         <div>

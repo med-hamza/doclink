@@ -5,13 +5,13 @@ import Info from './Info';
 import Specialty from './Specialty';
 
 
-const Tabs = ({ itemData }) => {
+const Tabs = ({ itemData, availitemData }) => {
     const tabData = [
         {
             title: "Info",
             content: (
                 <>
-                    <Info itemData={itemData} />
+                    <Info itemData={itemData} availitemData={availitemData} />
                 </>
             ),
         },

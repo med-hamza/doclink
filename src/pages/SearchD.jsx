@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchDoctor } from '../redux/reducers/searchSlice';
-import { Link, useSearchParams } from 'react-router-dom';
 import ListSearchDoctor from '../Components/ListSearchDoctor';
 
 
@@ -11,13 +10,14 @@ const SearchD = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const category = searchParams.get('category')
     const name = searchParams.get('name')
+    const available = searchParams.get('available')
 
 
     useEffect(() => {
-        if (category || name) {
-            dispatch(searchDoctor({ category, name }));
+        if (category || name || available === 'true') {
+            dispatch(searchDoctor({ selectedCategory: category, name, showAvailableOnly: available === 'true' }));
         }
-    }, [dispatch, category, name]);
+    }, [dispatch, category, name, available]);
 
     return (
         <div>

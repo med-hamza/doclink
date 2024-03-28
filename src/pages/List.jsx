@@ -4,13 +4,19 @@ import CategoryDoctor from '../Components/CategoryDoctor'
 import SearchDoctor from '../Components/SearchDoctor'
 import { fetchList } from '../redux/reducers/listSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchAvailabilty } from '../redux/reducers/AvailabilitySlice'
 const ListDoctor = React.lazy(() => import('../Components/ListDoctor'))
 
 const List = () => {
+
+
     const dispatch = useDispatch();
     const { listdata, loading, error } = useSelector((state) => state.list)
+    const { doctorData } = useSelector((state) => state.available)
+
     useEffect(() => {
         dispatch(fetchList())
+        dispatch(fetchAvailabilty())
     }, [dispatch])
     return (
 
@@ -19,6 +25,7 @@ const List = () => {
                 <div className=' max-w-4xl mx-auto'>
                     <SearchDoctor listdata={listdata} categorytitle='Select Doctor'
                         namedoctor='Search Doctor, clinics, hospital, etc'
+                        availablename='Availability'
                         style_section='px-2 py-3'
                         stylebtn='searchbtn'
                     />
@@ -34,7 +41,7 @@ const List = () => {
                 </div>
             </div>
             <Suspense fallback={<p> Loading ....</p>}>
-                <ListDoctor listdata={listdata} error={error} loading={loading} />
+                <ListDoctor listdata={listdata} error={error} loading={loading} doctorData={doctorData} />
             </Suspense>
         </>
     )
