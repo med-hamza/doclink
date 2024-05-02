@@ -1,20 +1,8 @@
 import React from 'react'
 import GoogleMaps from '../GoogleMaps/GoogleMaps'
+import useIsopen from '../../hooks/useIsopen';
 const Info = ({ itemData, availitemData }) => {
-    const isOpen = (schedule) => {
-        const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-        const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-        const currentDateTime = new Date(`2000-01-01 ${currentTime}`);
-
-        const todaySchedule = schedule.find(slot => slot.day === currentDay);
-
-        if (!todaySchedule) return false;
-
-        const startTime = new Date(`2000-01-01 ${todaySchedule.start_time}`);
-        const endTime = new Date(`2000-01-01 ${todaySchedule.end_time}`);
-
-        return currentDateTime >= startTime && currentDateTime <= endTime;
-    };
+    const isOpen = useIsopen(availitemData ? availitemData.schedule : []);
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
     const todaySchedule = availitemData ? availitemData.schedule.find(slot => slot.day === currentDay) : null;
     const startTim = todaySchedule ? todaySchedule.start_time : '';
@@ -28,7 +16,7 @@ const Info = ({ itemData, availitemData }) => {
                 <GoogleMaps mapId="doctormap" lat={itemData.lat} lng={itemData.lng} />
                 <p className=' text-primary text-xl mt-4  font-medium'> {itemData.address} </p>
                 <div>
-                    {availitemData && isOpen(availitemData.schedule) ? (
+                    {isOpen ? (
                         <div>
                             <p className='font-semibold text-[#07AE60]'>Open now
                                 <span className='text-[#536288] text-lg font-medium'> Today : {startTim} - {endTim}</span> </p>

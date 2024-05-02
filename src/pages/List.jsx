@@ -12,7 +12,7 @@ const List = () => {
 
     const dispatch = useDispatch();
     const { listdata, loading, error } = useSelector((state) => state.list)
-    const { doctorData } = useSelector((state) => state.available)
+    const { availableData } = useSelector((state) => state.available)
 
     useEffect(() => {
         dispatch(fetchList())
@@ -41,7 +41,7 @@ const List = () => {
                 </div>
             </div>
             <Suspense fallback={<p> Loading ....</p>}>
-                <ListDoctor listdata={listdata} error={error} loading={loading} doctorData={doctorData} />
+                <ListDoctor listdata={listdata} error={error} loading={loading} availableData={availableData} />
             </Suspense>
         </>
     )

@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import picDoctor from '../assets/picture/doctor.png'
 import AdressMpas from './GoogleMaps/AdressMpas'
-const ListDoctor = ({ listdata, loading, error, doctorData, isDoctorAvailable }) => {
+
+
+const ListDoctor = ({ listdata, loading, error }) => {
+
 
     if (loading) {
         return <p> Loading ....</p>
@@ -10,6 +13,8 @@ const ListDoctor = ({ listdata, loading, error, doctorData, isDoctorAvailable })
     if (error) {
         return <p>Error : {error} </p>
     }
+
+
     return (
         <>
             <div className='w-full container mx-auto px-4 py-4 sm:px-6 lg:px-8 font-poppins'>
@@ -36,11 +41,6 @@ const ListDoctor = ({ listdata, loading, error, doctorData, isDoctorAvailable })
                                             <button className='w-2/3 inline-block primarybtn'>Book Appointment</button>
                                         </div>
                                     </div>
-                                    {doctorData && (
-                                        <>
-                                            <p>Status: {isDoctorAvailable() ? 'Available' : 'Unavailable'}</p>
-                                        </>
-                                    )}
                                 </div>
 
                             </div>
