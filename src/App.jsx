@@ -5,6 +5,8 @@ import Body from './Components/body/Body';
 import List from './pages/List';
 import Doctordetails from './pages/Doctordetails';
 import SearchD from './pages/SearchD';
+import './styles/Calendar.css'
+import './styles/CalenderWeek.css'
 function App() {
   return (
 

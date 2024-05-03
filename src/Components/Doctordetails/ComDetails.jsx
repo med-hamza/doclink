@@ -1,5 +1,7 @@
 import React from 'react'
 import Tabs from '../tab/Tabs'
+import CalendarBook from '../Calendar/CalenderBook'
+import CalenderWeek from '../Calendar/CalenderWeek';
 const ComDetails = ({ picDoctor, itemData, availitemData }) => {
 
 
@@ -40,7 +42,7 @@ const ComDetails = ({ picDoctor, itemData, availitemData }) => {
                 </div>
             </div>
             <div className='w-full md:w-1/2  lg:w-[32%]'>
-                <h1>helo</h1>
+                <CalenderWeek itemData={itemData} availitemData={availitemData} />
             </div>
         </div>
     )

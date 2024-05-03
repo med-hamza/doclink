@@ -20,8 +20,6 @@ const useIsopen = (schedule) => {
 
             const startTime = new Date(`2000-01-01 ${todaySchedule.start_time}`);
             const endTime = new Date(`2000-01-01 ${todaySchedule.end_time}`);
-            console.log('isopen', startTime, endTime)
-
             setIsOpen(currentDateTime >= startTime && currentDateTime <= endTime);
         };
 
