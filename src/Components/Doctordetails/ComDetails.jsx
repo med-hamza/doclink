@@ -1,6 +1,5 @@
 import React from 'react'
 import Tabs from '../tab/Tabs'
-import CalendarBook from '../Calendar/CalenderBook'
 import CalenderWeek from '../Calendar/CalenderWeek';
 const ComDetails = ({ picDoctor, itemData, availitemData }) => {
 
