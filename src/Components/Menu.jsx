@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../assets/picture/logo.svg"
+import logo from "../assets/picture/logo.png"
 import { Link } from 'react-router-dom'
 const Menu = () => {
     return (

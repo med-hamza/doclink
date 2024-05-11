@@ -1,6 +1,6 @@
 import React from 'react'
 import Features from '../Components/body/Features'
-import logo from '../assets/picture/logo.svg'
+import logo from '../assets/picture/logo.png'
 
 const Footer = () => {
     return (
