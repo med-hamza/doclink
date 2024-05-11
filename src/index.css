@@ -83,3 +83,9 @@ code {
 .bottom-link:hover::after {
   width: 100%;
 }
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .smal-size {
+    width: 95% !important;
+  }
+}

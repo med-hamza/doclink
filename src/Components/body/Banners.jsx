@@ -4,12 +4,12 @@ import picture from '../../assets/picture/doctor_banner.png'
 const Banners = () => {
     return (
         <div className='w-full'>
-            <div className='container flex items-center justify-center mx-auto px-4 sm:px-6 lg:px-8 mb-8 gap-20'>
+            <div className='container block md:flex lg:flex md:items-center lg:items-center md:justify-between lg:justify-between mx-auto px-4 sm:px-6 lg:px-8 mb-8'>
                 <div>
-                    <h1 className=" text-bluedoc text-7xl  font-poppins font-medium ">Consult Top <br />
+                    <h1 className=" text-bluedoc text-5xl lg:text-7xl  font-poppins font-medium ">Consult Top <br />
                         <span className='text-bluedoc text-7xl font-poppins font-bold '> Doctors Online </span>
                     </h1>
-                    <h2 className=' mt-4 capitalize text-bluedoc font-poppins text-5xl'>for any health concern</h2>
+                    <h2 className=' mt-4 capitalize text-bluedoc font-poppins text-3xl lg:text-5xl'>for any health concern</h2>
 
                     <p className=' text-primary font-normal mt-5 text-sm mb-10'>At our hospital, we are dedicated to providing exceptional medical care to our patients and their families. <br />
                         Our experienced team of medical professionals, cutting-edge technology, and compassionate approach <br /> make us a leader in the healthcare industry</p>
@@ -37,7 +37,7 @@ const Banners = () => {
 
                     <Link to='' className='homebtn'> Appointments </Link>
                 </div>
-                <div>
+                <div className='  lg:mt-0 mt-14'>
                     <img src={picture} className=' w-96' alt="doctor banner" />
 
                 </div>

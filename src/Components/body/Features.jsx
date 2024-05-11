@@ -6,13 +6,13 @@ import features from '../../utils/features'
 const Features = () => {
     return (
         <div style={{ backgroundImage: `url(${banner})` }} className='p-9 bg-cover'>
-            <div className=' flex justify-center items-center max-w-screen-lg gap-10  mx-auto'>
+            <div className=' block lg:flex justify-center items-center max-w-screen-lg gap-10  mx-auto'>
                 <div className=' bg-lighter rounded-3xl  p-6'>
                     <div className='bg-white rounded-2xl'>
                         {features.map((item) => (
                             <div key={item.name} className='box-features px-2 py-3 border-b-2  border-lighter gap-3 flex items-center '>
                                 <img src={item.pic} alt="25+ Years Experience" />
-                                <div>
+                                <div className=''>
                                     <h3 className=' text-primary text-xl font-semibold'>{item.name}</h3>
                                     <p className=' text-[#536288]  text-sm font-light'>
                                         {item.text}
@@ -23,7 +23,7 @@ const Features = () => {
                     </div>
                 </div>
                 <div>
-                    <div>
+                    <div className=' lg:mt-0 mt-8'>
                         <h3 className=' text-lighter font-semibold  text-4xl'> Here's what makes us <br />
                             different from Others </h3>
                         <p className=' text-lighter font-light  text-lg '>We are brave compared to others, because we

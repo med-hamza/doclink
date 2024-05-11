@@ -28,12 +28,10 @@ export const searchDoctor = createAsyncThunk('search/fetchDoctors', async ({ sel
             const isAvailable = isTimeInRange(startTime, endTime, currentTime);
 
             function isTimeInRange(startTime, endTime, currentTime) {
-                // Convert time strings to Date objects for accurate comparison
                 const startDate = new Date(`2000/01/01 ${startTime}`);
                 const endDate = new Date(`2000/01/01 ${endTime}`);
                 const currentDate = new Date(`2000/01/01 ${currentTime}`);
 
-                // Check if current time is within the availability window
                 return currentDate >= startDate && currentDate <= endDate;
             }
 
@@ -43,7 +41,6 @@ export const searchDoctor = createAsyncThunk('search/fetchDoctors', async ({ sel
                 return name || selectedCategory;
             }
         });
-        console.log(filteredDoctors)
         return filteredDoctors;
 
 

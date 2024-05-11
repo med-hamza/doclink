@@ -45,7 +45,7 @@ const Doctordetails = () => {
                     <SearchDoctor listdata={listdata} categorytitle='Select Doctor'
                         namedoctor='Search Doctor, clinics, hospital, etc'
                         availablename='Availability'
-                        style_section='px-2 py-3'
+                        style_section='py-3'
                         stylebtn='searchbtn'
                     />
                     <div className='grid grid-cols-7 gap-4'>

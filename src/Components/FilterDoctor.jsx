@@ -21,7 +21,7 @@ const FilterDoctor = ({ listdata, onNameClick }) => {
     })
 
     return (
-        <div className=' w-4/5 relative'>
+        <div className=' w-full lg:w-4/5 relative'>
             <input
                 type='text'
                 value={searchItem}

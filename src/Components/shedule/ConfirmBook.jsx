@@ -16,9 +16,6 @@ const ConfirmBook = () => {
     const [bookingClicked, setBookingClicked] = useState(true);
     const [selectedTime, setSelectedTime] = useState(null);
 
-    console.log(bookingClicked)
-
-    console.log(selectedTime)
     const { id } = useParams();
     const pageName = 'booking'
     const dispatch = useDispatch();

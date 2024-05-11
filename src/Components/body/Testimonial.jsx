@@ -3,11 +3,11 @@ import React from 'react'
 const Testimonial = ({ children, datatestimo }) => {
     return (
         <div className=' w-full mt-5 mb-5'>
-            <div className=' w-2/3 mx-auto'>
+            <div className=' w-11/12 lg:w-2/3 mx-auto'>
                 <h2 className='text-bluedoc text-center font-bold text-4xl mb-5'>
                     {children}
                 </h2>
-                <div className=' mt-8 grid grid-cols-3 gap-3'>
+                <div className=' mt-8 grid grid-cols-1 lg:grid-cols-3 gap-3'>
                     {datatestimo.map((test) => (
                         <div key={test.name} className='rounded-lg bg-white shadow-md p-6'>
                             <img src={test.pic} className='mb-2' alt="doclink testimonial" />

@@ -22,14 +22,14 @@ const List = () => {
 
         <>
             <div className=' bg-lighter py-5 font-poppins '>
-                <div className=' max-w-4xl mx-auto'>
+                <div className=' max-w-4xl lg:px-0  px-10 mx-auto'>
                     <SearchDoctor listdata={listdata} categorytitle='Select Doctor'
                         namedoctor='Search Doctor, clinics, hospital, etc'
                         availablename='Availability'
-                        style_section='px-2 py-3'
+                        style_section='py-3'
                         stylebtn='searchbtn'
                     />
-                    <div className='grid grid-cols-7 gap-4'>
+                    <div className='lg:grid md:grid md:grid-cols-7 lg:grid-cols-7 gap-2 hidden lg:gap-4'>
                         {DoctorsCategory.map((category) => (
                             <CategoryDoctor key={category.id}
                                 color={category.color}

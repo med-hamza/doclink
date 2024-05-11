@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import BodyHome from './BodyHome'
 import Banners from './Banners'
 import BodySection from './BodySection'
@@ -22,7 +22,7 @@ const Body = () => {
         <>
             <Banners />
             <SearchDoctor listdata={listdata}
-                style_section='px-5 py-6 body_search'
+                style_section='px-6 py-6 body_search'
                 titlesearch="Find A Doctor"
                 stylebtn='px-8 py-1.5 bg-bluedoc text-white border-1 rounded-md' />
             <BodyHome />
