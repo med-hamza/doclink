@@ -12,16 +12,18 @@ import {
 } from "date-fns";
 import useIsopen from '../../hooks/useIsopen';
 import TimeSlots from './TimeSlots';
+import TimeBooking from '../shedule/TimeBooking'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
 
-const CalenderWeek = ({ itemData, availitemData }) => {
+const CalenderWeek = ({ itemData, availitemData, picDoctor, pageName }) => {
     const isOpen = useIsopen(availitemData ? availitemData.schedule : []);
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [currentWeek, setCurrentWeek] = useState(getWeek(currentMonth));
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [selectedDayTimes, setSelectedDayTimes] = useState(null);
+
     const [date, setDate] = useState({
         justDate: null,
         dateTime: null,
@@ -86,7 +88,6 @@ const CalenderWeek = ({ itemData, availitemData }) => {
         const dayStr = format(day, "ccc dd MMM yy");
         const times = getTimes({ justDate: day });
         onDateClickHandle(day, dayStr, times);
-
     };
 
 
@@ -170,20 +171,28 @@ const CalenderWeek = ({ itemData, availitemData }) => {
         <div>
             <h2 className='text-primary text-xl font-semibold mb-4'>Choose Time Slot</h2>
             <div className='calendar'>
+
                 {renderHeader()}
                 {renderDays()}
                 {renderCells()}
 
+
+
                 <div className=' mt-4 p-2 mb-4'>
                     {isOpen ? (
                         <>
-                            {selectedDayTimes && <TimeSlots timeSlots={selectedDayTimes} />}
+                            {pageName === 'details' && selectedDayTimes && <TimeSlots timeSlots={selectedDayTimes} picDoctor={picDoctor} itemData={itemData} />}
+                            {pageName === 'booking' && selectedDayTimes && <TimeBooking timeSlots={selectedDayTimes} picDoctor={picDoctor} itemData={itemData} />}
+
                         </>
                     ) : (
                         <>
                             {selectedDayTimes ? <p>NO TIME FOR THE MOMENT</p> : null}
                         </>
                     )}
+                </div>
+                <div>
+
                 </div>
             </div>
         </div>

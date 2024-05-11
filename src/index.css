@@ -18,6 +18,11 @@ code {
     monospace;
 }
 
+.picappointment {
+  @apply w-28 h-28 object-cover rounded-md border-[#D6E8FC];
+  border-width: 1px;
+}
+
 .box-features:last-child {
   border: none !important;
 }

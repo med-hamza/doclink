@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import GoogleMaps from '../GoogleMaps/GoogleMaps'
 import useIsopen from '../../hooks/useIsopen';
+import Modal from '../Modal/Modal';
+import { PiMapPinThin } from "react-icons/pi";
+import { PiPhoneLight } from "react-icons/pi";
+import { PiPhoneFill } from "react-icons/pi";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Link } from 'react-router-dom';
+
 const Info = ({ itemData, availitemData }) => {
+    const [open, setOpen] = useState(false)
+
+
     const isOpen = useIsopen(availitemData ? availitemData.schedule : []);
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
     const todaySchedule = availitemData ? availitemData.schedule.find(slot => slot.day === currentDay) : null;
@@ -12,6 +22,53 @@ const Info = ({ itemData, availitemData }) => {
     return (
         <div>
             {itemData ? <>
+                <h2 className=' text-2xl font-semibold text-primary mb-4'>Contact</h2>
+                <div className='mb-4'>
+                    <button
+                        onClick={() => setOpen(true)}
+                        className=' pl-2 pr-6 py-1.5 bg-bluedoc text-white border-1 flex items-center justify-start gap-3 rounded-md'><PiPhoneLight />
+                        Call now </button>
+                </div>
+                <Modal
+                    open={open}
+                    onClose={() => setOpen(false)}
+                    title="call"
+                >
+                    <div className='w-[400px]'>
+                        <div className=" flex gap-4">
+                            <div>
+                                {/* <img src={picDoctor} alt={itemData && itemData.name}
+                                    className='picappointment' /> */}
+                            </div>
+                            <div className=''>
+                                <p className='font-medium  text-left'>{itemData.name}</p>
+                                <p className='font-light text-left'>{itemData.title}</p>
+                                <div className='flex items-center gap-1 mt-1'>
+                                    <PiMapPinThin className=' text-lg text-primary' />
+                                    <p className='font-light text-xs text-left'> {itemData.address} </p>
+                                </div>
+                                <div className='mt-6  mb-5 m-auto'>
+                                    <h3 className='mb-4  font-medium' >Doctor's Contact Information Provided Below :</h3>
+                                    <div className='  mx-auto inline-block'>
+                                        <a href={`tel:${itemData.phone}`} className=' text-center  px-4 flex items-center justify-start gap-3 py-1.5 bg-white border rounded-md border-primary'>
+                                            <PiPhoneFill />
+                                            {itemData.phone}
+                                            <MdOutlineKeyboardArrowRight />
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </Modal>
+                <div>
+                    <p className='border-b border-lighter mb-4'></p>
+                </div>
                 <h2 className=' text-2xl font-semibold text-primary mb-4'>Location</h2>
                 <GoogleMaps mapId="doctormap" lat={itemData.lat} lng={itemData.lng} />
                 <p className=' text-primary text-xl mt-4  font-medium'> {itemData.address} </p>

@@ -60,7 +60,9 @@ const Doctordetails = () => {
                 </div>
             </div>
             <div className='w-full container mx-auto px-4 py-4 sm:px-6 lg:px-8 font-poppins'>
-                <ComDetails itemData={itemData} picDoctor={picDoctor} availitemData={availitemData} />
+                <ComDetails itemData={itemData} picDoctor={picDoctor} availitemData={availitemData}
+                    description='details'
+                />
             </div>
 
         </div>

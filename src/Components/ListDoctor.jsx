@@ -4,16 +4,14 @@ import picDoctor from '../assets/picture/doctor.png'
 import AdressMpas from './GoogleMaps/AdressMpas'
 
 
+
 const ListDoctor = ({ listdata, loading, error }) => {
-
-
     if (loading) {
         return <p> Loading ....</p>
     }
     if (error) {
         return <p>Error : {error} </p>
     }
-
 
     return (
         <>
@@ -23,7 +21,7 @@ const ListDoctor = ({ listdata, loading, error }) => {
                         {listdata ? listdata.map((item) => (
                             <div className='mb-4 px-3 py-4 bg-white  shadow-sm  rounded-md' key={item.id}>
                                 <div className="flex items-end">
-                                    <Link to={`${item.id}`} className=' w-3/5 flex justify-start items-start'>
+                                    <Link to={`/list-doctor/${item.id}`} className=' w-3/5 flex justify-start items-start'>
                                         <div>
                                             <img src={picDoctor} alt={item.name} />
                                         </div>
@@ -34,12 +32,9 @@ const ListDoctor = ({ listdata, loading, error }) => {
                                         </div>
                                     </Link>
                                     <div className=' space-y-2 w-2/5 text-end'>
-                                        <div>
-                                            <button className='w-2/3 inline-block secondarybtn'>Chat now</button>
-                                        </div>
-                                        <div>
+                                        <Link to={`/appointment/${item.id}`}>
                                             <button className='w-2/3 inline-block primarybtn'>Book Appointment</button>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </div>
 

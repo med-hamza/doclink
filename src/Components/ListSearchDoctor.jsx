@@ -6,12 +6,16 @@ const ListSearchDoctor = ({ searchdata }) => {
 
     return (
         <div className='w-full container mx-auto px-4 py-4 sm:px-6 lg:px-8 font-poppins'>
+
+            <div className='  w-4/5 mx-auto '>
+                <h1 className=' mb-7 text-black font-semibold text-xl '>Find Open Appointments with Doctors</h1>
+            </div>
             <div className=' w-4/5 mx-auto flex flex-wrap gap-3'>
                 <div className=' w-full lg:w-1/2'>
                     {searchdata ? searchdata.map((item) => (
-                        <div className='mb-4 px-3 py-4 bg-seconder border-2 border-[#E3F0FF]  rounded-md' key={item.id}>
+                        <div className='mb-4 px-3 py-4 bg-white  shadow-sm  rounded-md' key={item.id}>
                             <div className="flex items-end">
-                                <Link to={`${item.id}`} className=' w-3/5 flex justify-start items-start'>
+                                <Link to={`/list-doctor/${item.id}`} className=' w-3/5 flex justify-start items-start'>
                                     <div>
                                         <img src={picDoctor} alt={item.name} />
                                     </div>
@@ -23,10 +27,9 @@ const ListSearchDoctor = ({ searchdata }) => {
                                 </Link>
                                 <div className=' space-y-2 w-2/5 text-end'>
                                     <div>
-                                        <button className='w-2/3 inline-block secondarybtn'>Chat now</button>
-                                    </div>
-                                    <div>
-                                        <button className='w-2/3 inline-block primarybtn'>Book Appointment</button>
+                                        <Link to={`/appointment/${item.id}`}>
+                                            <button className='w-2/3 inline-block primarybtn'>Book Appointment</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
