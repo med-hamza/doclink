@@ -2,7 +2,7 @@ import React from 'react'
 
 const TabButtons = ({ tabData, setActivetab, activeTab }) => {
     return (
-        <div className='flex justify-start items-center gap-4 mb-5 border-b border-[#D2E9FE]  dark:border-[#D2E9FE]'>
+        <div className=' hidden lg:flex justify-start items-center gap-4 mb-5 border-b border-[#D2E9FE]  dark:border-[#D2E9FE]'>
             {tabData.map((item, index) => (
                 <button className={`
                 inline-block p-2  rounded-t-lg hover:border-lighter
