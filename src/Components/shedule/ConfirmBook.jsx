@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { fetchListByid } from '../../redux/reducers/listSlice';
-import picDoctor from '../../assets/picture/doctor_detail.png';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
@@ -51,8 +50,8 @@ const ConfirmBook = () => {
             </div>
             <div className='bg-seconder  w-3/4 mx-auto'>
                 <div className=' '></div>
-                <BookingDetails itemData={itemData} picDoctor={picDoctor} />
-                <Appointment selectedTime={selectedTime} picDoctor={picDoctor}
+                <BookingDetails itemData={itemData} />
+                <Appointment selectedTime={selectedTime}
                     itemData={itemData} bookingClicked={bookingClicked}
                     handleBookingClick={handleBookingClick} clearBook={clearBook} />
             </div>

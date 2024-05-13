@@ -6,7 +6,6 @@ import { PiMapPinThin } from "react-icons/pi";
 import { PiPhoneLight } from "react-icons/pi";
 import { PiPhoneFill } from "react-icons/pi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { Link } from 'react-router-dom';
 import { IoMdArrowDropdown } from "react-icons/io";
 
 const Info = ({ itemData, availitemData }) => {
@@ -38,10 +37,6 @@ const Info = ({ itemData, availitemData }) => {
                     >
                         <div className='w-[400px]'>
                             <div className=" flex gap-4">
-                                <div>
-                                    {/* <img src={picDoctor} alt={itemData && itemData.name}
-                                    className='picappointment' /> */}
-                                </div>
                                 <div className=''>
                                     <p className='font-medium  text-left'>{itemData.name}</p>
                                     <p className='font-light text-left'>{itemData.title}</p>
@@ -73,7 +68,7 @@ const Info = ({ itemData, availitemData }) => {
                     <p className='border-b border-lighter mb-4'></p>
                 </div>
                 <h2 className=' lg:block hidden text-2xl font-semibold text-primary mb-4'>Location</h2>
-                <div className="lg:hidden  block rounded-md shadow-lg text-center py-4">
+                <div className="lg:hidden bg-white  block rounded-md shadow-lg text-center py-4">
                     <p className="text-xs text-black ">
                         {" "}
                         Here is your route to get to:

@@ -17,7 +17,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
 
-const CalenderWeek = ({ itemData, availitemData, picDoctor, pageName }) => {
+const CalenderWeek = ({ itemData, availitemData, pageName }) => {
     const isOpen = useIsopen(availitemData ? availitemData.schedule : []);
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [currentWeek, setCurrentWeek] = useState(getWeek(currentMonth));
@@ -181,8 +181,8 @@ const CalenderWeek = ({ itemData, availitemData, picDoctor, pageName }) => {
                 <div className=' mt-4 p-2 mb-4'>
                     {isOpen ? (
                         <>
-                            {pageName === 'details' && selectedDayTimes && <TimeSlots timeSlots={selectedDayTimes} picDoctor={picDoctor} itemData={itemData} />}
-                            {pageName === 'booking' && selectedDayTimes && <TimeBooking timeSlots={selectedDayTimes} picDoctor={picDoctor} itemData={itemData} />}
+                            {pageName === 'details' && selectedDayTimes && <TimeSlots timeSlots={selectedDayTimes} itemData={itemData} />}
+                            {pageName === 'booking' && selectedDayTimes && <TimeBooking timeSlots={selectedDayTimes} itemData={itemData} />}
 
                         </>
                     ) : (

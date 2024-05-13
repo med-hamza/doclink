@@ -12,7 +12,7 @@ const Menu = () => {
                         </Link>
                     </div>
                     <div className='flex  justify-center items-center gap-8'>
-                        <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium  hover:text-bluedoc" > Find Doctors </Link>
+                        <Link to="/list-doctor" className="bottom-link text-black text-lg font-poppins font-medium  hover:text-bluedoc" > Find Doctors </Link>
                         <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium hover:text-bluedoc"  > contact us</Link>
                         <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium hover:text-bluedoc" > Help</Link>
                         <Link to="/" className="bottom-link text-black text-lg font-poppins font-medium hover:text-bluedoc" > Blogs</Link>

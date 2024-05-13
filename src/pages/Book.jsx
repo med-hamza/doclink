@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import BookingDetails from '../Components/Doctordetails/BookingDetails'
-import picDoctor from '../assets/picture/doctor_detail.png'
 import { fetchListByid } from '../redux/reducers/listSlice'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -38,10 +37,10 @@ const Book = () => {
             </div>
             <div className='bg-seconder  w-3/4 mx-auto'>
                 <div className=' '></div>
-                <BookingDetails itemData={itemData} picDoctor={picDoctor} />
+                <BookingDetails itemData={itemData} />
                 <div className=' w-4/5 mx-auto'>
                     <CalenderWeek itemData={itemData} availitemData={availitemData}
-                        picDoctor={picDoctor} pageName={pageName} />
+                        pageName={pageName} />
                 </div>
             </div>
 

@@ -4,7 +4,7 @@ const DoctorDetailsContent = ({ itemData, isBox }) => {
 
 
     return (
-        <div className='py-2'>
+        <div className='py-3'>
             <h2 className='text-primary text-xl font-semibold lg:block hidden'>{itemData.name}</h2>
             <p className='lg:block hidden'>{itemData.category}</p>
             <p className='font-medium lg:block hidden'>{itemData.title}</p>

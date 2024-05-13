@@ -10,10 +10,6 @@ const Appointment = ({ selectedTime, itemData, bookingClicked, clearBook }) => {
             {bookingClicked && selectedTime && (
                 <div className=' w-full'>
                     <div className=" flex gap-4">
-                        {/* <div>
-                            <img src={picDoctor} alt={itemData && itemData.name}
-                                className='picappointment' />
-                        </div> */}
                         <div className=''>
                             <p className='font-medium  text-left'>{itemData.name}</p>
                             <p className='font-medium text-left'>{itemData.title}</p>

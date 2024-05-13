@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { fetchListByid } from '../redux/reducers/listSlice'
 import CategoryDoctor from '../Components/CategoryDoctor'
 import DoctorsCategory from '../utils/categoryListDcotor'
-import picDoctor from '../assets/picture/doctor_detail.png'
 import SearchDoctor from '../Components/SearchDoctor'
 import { fetchList } from '../redux/reducers/listSlice'
 import ComDetails from '../Components/Doctordetails/ComDetails'
@@ -60,7 +59,7 @@ const Doctordetails = () => {
                 </div>
             </div>
             <div className='w-full container mx-auto px-4 py-4 sm:px-6 lg:px-8 font-poppins'>
-                <ComDetails itemData={itemData} picDoctor={picDoctor} availitemData={availitemData}
+                <ComDetails itemData={itemData} availitemData={availitemData}
                     description='details'
                 />
             </div>

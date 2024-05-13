@@ -5,7 +5,7 @@ import {
 import { AiOutlineClose } from "react-icons/ai";
 import Appointment from './Appointment';
 
-const TimeBooking = ({ timeSlots, picDoctor, itemData }) => {
+const TimeBooking = ({ timeSlots, itemData }) => {
     const [selectedTime, setSelectedTime] = useState(null);
     const [timeSlotClicked, setTimeSlotClicked] = useState(false)
     const [showTimeSlots, setShowTimeSlots] = useState(true);
@@ -66,7 +66,7 @@ const TimeBooking = ({ timeSlots, picDoctor, itemData }) => {
             )}
 
 
-            <Appointment selectedTime={selectedTime} picDoctor={picDoctor}
+            <Appointment selectedTime={selectedTime}
                 itemData={itemData} bookingClicked={bookingClicked}
                 handleBookingClick={handleBookingClick} clearBook={clearBook} />
         </div>

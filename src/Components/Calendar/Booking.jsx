@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal';
 import { IoCalendarOutline } from "react-icons/io5";
 import { IoMdTime } from "react-icons/io";
 
-const Booking = ({ selectedTime, picDoctor, itemData }) => {
+const Booking = ({ selectedTime, itemData }) => {
     const [bookingClicked, setBookingClicked] = useState(false);
     const [openmodal, setopenModal] = useState(false);
     const handleBookingClick = () => {
@@ -27,8 +27,9 @@ const Booking = ({ selectedTime, picDoctor, itemData }) => {
                     <div className=' w-[500px]'>
                         <div className=" flex gap-4">
                             <div>
-                                <img src={picDoctor} alt={itemData && itemData.name}
-                                    className='picappointment' />
+                                <img src={`${window.location.origin}/images/${itemData?.picture}.png`}
+                                    className=' w-32 h-32 picappointment'
+                                />
                             </div>
                             <div className=''>
                                 <p className='font-medium  text-left'>{itemData.name}</p>

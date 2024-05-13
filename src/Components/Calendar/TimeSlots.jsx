@@ -5,7 +5,7 @@ import {
 import Booking from './Booking';
 import { AiOutlineClose } from "react-icons/ai";
 
-const TimeSlots = ({ timeSlots, picDoctor, itemData }) => {
+const TimeSlots = ({ timeSlots, itemData }) => {
     const [selectedTime, setSelectedTime] = useState(null);
     const [timeSlotClicked, setTimeSlotClicked] = useState(false)
 
@@ -43,7 +43,7 @@ const TimeSlots = ({ timeSlots, picDoctor, itemData }) => {
                     )}
                 </div>
                 <div className=' justify-end'></div>
-                <Booking selectedTime={selectedTime} picDoctor={picDoctor} itemData={itemData} />
+                <Booking selectedTime={selectedTime} itemData={itemData} />
             </div>
 
 

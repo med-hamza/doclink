@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import picDoctor from '../assets/picture/doctor.png'
 import AdressMpas from './GoogleMaps/AdressMpas'
 
 
@@ -23,7 +22,9 @@ const ListDoctor = ({ listdata, loading, error }) => {
                                 <div className="flex items-end">
                                     <Link to={`/list-doctor/${item.id}`} className=' w-full lg:w-3/5 flex justify-start items-start'>
                                         <div>
-                                            <img src={picDoctor} alt={item.name} />
+                                            <img src={`${window.location.origin}/images/${item.picture}.png`}
+                                                className=' w-32 h-32'
+                                            />
                                         </div>
                                         <div>
                                             <h3 className='text-black font-semibold'>{item.name}</h3>

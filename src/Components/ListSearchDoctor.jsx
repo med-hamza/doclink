@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import AdressMpas from './GoogleMaps/AdressMpas'
-import picDoctor from '../assets/picture/doctor.png';
 const ListSearchDoctor = ({ searchdata }) => {
 
     return (
@@ -16,7 +15,9 @@ const ListSearchDoctor = ({ searchdata }) => {
                             <div className="flex items-end">
                                 <Link to={`/list-doctor/${item.id}`} className='  w-full lg:w-3/5 flex justify-start items-start'>
                                     <div>
-                                        <img src={picDoctor} alt={item.name} />
+                                        <img src={`${window.location.origin}/images/${item?.picture}.png`}
+                                            className=' w-32 h-32'
+                                        />
                                     </div>
                                     <div>
                                         <h3 className='text-black font-semibold'>{item.name}</h3>
